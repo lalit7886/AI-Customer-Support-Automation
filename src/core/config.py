@@ -9,6 +9,8 @@ BASE_DIR = Path(__file__).resolve().parents[2]
 class Settings(BaseSettings):
     app_name: str = "IT_SUPPORT"
     app_env: str = "development"
+    gemini_api_key : str = ""
+    gemini_model : str = "gemini-3.6-flash"
     tavily_api_key : str = ""
     groq_api_key : str = ""
     pinecone_api_key : str = ""
