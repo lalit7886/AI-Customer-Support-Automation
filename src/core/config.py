@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     groq_api_key : str = ""
     pinecone_api_key : str = ""
     database_url : str = ""
-    pinecone_index_name: str = "IT_SUPPORT"
+    pinecone_index_name: str = "it-support-vectors"
     pinecone_namespace: str = "company-it-kb"
     embedding_model : str = "BAAI/bge-m3"
     groq_llm_model: str = "openai/gpt-oss-20b"

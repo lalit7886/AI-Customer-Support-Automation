@@ -57,9 +57,9 @@ def extract_pdf(file_path: str):
         _response_with_metadata = {
             "document_id": uuid4(),
             "file_name":file_path.name,
-            "source":file_path,
+            "source":str(file_path),
             "extracted_text":_response,
-            "last_extracted_time":datetime.now(),
+            "last_extracted_time":str(datetime.now()),
         }
         return _response_with_metadata
                 
@@ -97,9 +97,9 @@ def extract_docx(file_path:str):
         return{
             "document_id":uuid4(),
             "file_name":file_path.name,
-            "source":file_path,
+            "source":str(file_path),
             "extracted_text":text_content + "\n\n" + plain_text,
-            "last_extracted_time":datetime.now(),
+            "last_extracted_time":str(datetime.now()),
         }
     except Exception as e:
         raise MyException(e) from e
@@ -121,9 +121,9 @@ def extract_text(file_path:str):
         return{
             "document_id":uuid4(),
             "file_name":file_path.name,
-            "source":file_path,
+            "source":str(file_path),
             "extracted_text":text,
-            "last_extracted_time":datetime.now(),
+            "last_extracted_time":str(datetime.now()),
         }
     except Exception as e:
         raise MyException(e) from e
@@ -133,9 +133,9 @@ def extract_readme(file_path:str):
     text=Path(file_path).read_text(encoding="utf-8")
     return{
         "file_name":Path(file_path).name,
-        "source":file_path,
+        "source":str(file_path),
         "extracted_text":text,
-        "last_extracted_time":datetime.now(),
+        "last_extracted_time":str(datetime.now()),
     }
 
 
